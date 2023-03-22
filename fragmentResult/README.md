@@ -4,17 +4,20 @@ setFragmentResultListener을 호출하는 시점에 따라 fragment result 수�
 
 ## 클래스 설명
 
-<img src="images/classGraph.png" width="50%"/>
+<img src="images/classGraph.png" width="30%"/>
 
 실선은 화면 전환을, 점선은 fragment result 전달을 나타냅니다.
 
-ResultFragment:
+**ResultFragment:**
+
 Fragment result를 등록하고 popbackstack을 수행합니다.
 
-FragmentA:
+**FragmentA:**
+
 ResultFragment, FragmentB로 화면 전환을 시도하거나 등록된 Fragment result를 보여줍니다.
 
-FragmentB:
+**FragmentB:**
+
 등록된 Fragment result를 보여줍니다.
 
 ## 화면 전환 시나리오
