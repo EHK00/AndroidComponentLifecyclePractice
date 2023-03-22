@@ -4,7 +4,7 @@ setFragmentResultListener을 호출하는 시점에 따라 fragment result 수�
 
 ## 클래스 설명
 
-<img src="images/classGraph.png"/>
+<img src="images/classGraph.png" width="50%"/>
 
 실선은 화면 전환을, 점선은 fragment result 전달을 나타냅니다.
 
@@ -18,7 +18,7 @@ FragmentB:
 등록된 Fragment result를 보여줍니다.
 
 ## 화면 전환 시나리오 
-<img src="images/graph2.png" width="50%"/>
+<img src="images/graph2.png" width="60%"/>
 
 세로선은 시간이며 가로선은 fragment 전환을 나타냅니다.
 
@@ -50,7 +50,7 @@ setFragmentResultListener()이 호출되면 기존에 등록된 requestKey로 fr
 
 fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사례
 
-<img src="imges/graph4.png" width="60%"/>
+<img src="images/graph4.png" width="60%"/>
 
 가장 마지막에 생성된 fragmentView로 fragmentResultListener가 덮어씌워지기 때문에 새로운 결과를 받을 수 있습니다.
 
