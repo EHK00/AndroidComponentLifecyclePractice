@@ -18,7 +18,7 @@ FragmentB:
 등록된 Fragment result를 보여줍니다.
 
 ## 화면 전환 시나리오 
-<img src="images/graph2.png"/>
+<img src="images/graph2.png" width="50%"/>
 
 세로선은 시간이며 가로선은 fragment 전환을 나타냅니다.
 
@@ -41,7 +41,7 @@ fragment onCreate callback에서 FragmentResultListener를 등록하는 방법�
 [공식 홈페이지 가이드](https://developer.android.com/guide/fragments/communicate#pass-between-fragments)
 에서 제공하는 방법으로 수행합니다.
 
-<img src="images/graph3.png"/>
+<img src="images/graph3.png" width="60%"/>
 
 setFragmentResultListener()이 호출되면 기존에 등록된 requestKey로 fragmentResultListener가 덮어씌워지기 때문에 새로운 결과를 받을
 수 없습니다.
@@ -50,7 +50,7 @@ setFragmentResultListener()이 호출되면 기존에 등록된 requestKey로 fr
 
 fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사례
 
-<img src="imges/graph4.png"/>
+<img src="imges/graph4.png" width="60%"/>
 
 가장 마지막에 생성된 fragmentView로 fragmentResultListener가 덮어씌워지기 때문에 새로운 결과를 받을 수 있습니다.
 
