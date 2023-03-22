@@ -50,7 +50,7 @@ setFragmentResultListener()이 호출되면 기존에 등록된 requestKey로 fr
 
 fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사례
 
-<img src="images/graph4.png" width="60%"/>
+<img src="images/graph5.png" width="60%"/>
 
 가장 마지막에 생성된 fragmentView로 fragmentResultListener가 덮어씌워지기 때문에 새로운 결과를 받을 수 있습니다.
 
