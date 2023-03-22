@@ -4,7 +4,7 @@ setFragmentResultListener을 호출하는 시점에 따라 fragment result 수�
 
 ## 클래스 설명
 
-<img src="imges/classGraph.png"/>
+<img src="images/classGraph.png"/>
 
 실선은 화면 전환을, 점선은 fragment result 전달을 나타냅니다.
 
@@ -18,7 +18,7 @@ FragmentB:
 등록된 Fragment result를 보여줍니다.
 
 ## 화면 전환 시나리오 
-<img src="imges/graph2.png"/>
+<img src="images/graph2.png"/>
 
 세로선은 시간이며 가로선은 fragment 전환을 나타냅니다.
 
@@ -26,19 +26,27 @@ FragmentA -> FragmentB -> ResultFragment -> FragmentB -> FragmentA -> ResultFrag
 
 순서로 이동하면서 ResultFragment로부터 fragment result를 제대로 받아오는지 테스트합니다.
 
-## onCreate에서 호출하는 경우
+
+## 테스트
+
+테스트를 하면서 FragmentA, FragmentB의 setFragmentResultCallback() 호출 시점을 수정해주세요.
+
+각 Frament 클래스의 주석을 수정해주시면됩니다.
+
+
+### onCreate에서 호출하는 경우
 
 fragment onCreate callback에서 FragmentResultListener를 등록하는 방법입니다.
 
 [공식 홈페이지 가이드](https://developer.android.com/guide/fragments/communicate#pass-between-fragments)
 에서 제공하는 방법으로 수행합니다.
 
-<img src="imges/graph3.png"/>
+<img src="images/graph3.png"/>
 
 setFragmentResultListener()이 호출되면 기존에 등록된 requestKey로 fragmentResultListener가 덮어씌워지기 때문에 새로운 결과를 받을
 수 없습니다.
 
-## onViewCreated에서 호출하는 경우
+### onViewCreated에서 호출하는 경우
 
 fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사례
 
@@ -50,11 +58,11 @@ fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사
 
 왜 이런 결과가 발생할까요?
 
-1)fragmentResultListener는 키-값 쌍으로 등록됩니다. 동일한 키로 등록을 시도하면 이전의 listener는 제거됩니다.
+1) fragmentResultListener는 키-값 쌍으로 등록됩니다. 동일한 키로 등록을 시도하면 이전의 listener는 제거됩니다.
 
-2)fragmentResultListener는 한번 결과를 전달하면 해제됩니다. 
+2) fragmentResultListener는 한번 결과를 전달하면 해제됩니다. 
 
-3)만약 전달될 리스너가 없이 result가 등록되는 경우 동일한 키로 fragmentResultListener가 등록되길 기다립니다.
+3) 만약 전달될 리스너가 없이 result가 등록되는 경우 동일한 키로 fragmentResultListener가 등록되길 기다립니다.
 
 이는 다른 모듈에서 다룰 내용이지만 addToBackStack과도 연관됩니다.
 
