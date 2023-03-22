@@ -34,7 +34,7 @@ FragmentA -> FragmentB -> ResultFragment -> FragmentB -> FragmentA -> ResultFrag
 
 테스트를 하면서 FragmentA, FragmentB의 setFragmentResultCallback() 호출 시점을 수정해주세요.
 
-각 Frament 클래스의 주석을 수정해주시면됩니다.
+각 Frament 클래스의 setFragmentResultCallback() 주석을 수정해주시면됩니다.
 
 ### onCreate에서 호출하는 경우
 
@@ -50,7 +50,7 @@ setFragmentResultListener()이 호출되면 기존에 등록된 requestKey로 fr
 
 ### onViewCreated에서 호출하는 경우
 
-fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사례
+fragment onViewCreated callback에서 FragmentResultListener를 등록하는 방법입니다.
 
 <img src="images/graph5.png" width="60%"/>
 
@@ -58,7 +58,7 @@ fragment onViewCreated callback에서 FragmentResultListener를 등록하는 사
 
 ## 테스트 결과 고찰
 
-왜 이런 결과가 발생할까요?
+왜 이런 차이가 발생할까요?
 
 Fragment Result api는 아래의 특징을 갖고 있습니다.
 
