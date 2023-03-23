@@ -4,4 +4,4 @@
 
 ## [fragment result api에서 중복된 requestKey 관리](https://github.com/EHK00/AndroidComponentLifecyclePractice/tree/main/fragmentResult)
 
-setFragmentResultListener을 호출하는 시점에 따라 fragment result 수신 여부를 테스트합니다.
+setFragmentResultListener을 호출하는 시점에 따른 fragment result 수신 여부 차이를 테스트합니다.
