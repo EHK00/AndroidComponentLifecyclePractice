@@ -2,87 +2,80 @@ package com.ekh.uilifecycle
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import timber.log.Timber
 
-class MyFragment : Fragment() {
-    private val LOG_TAG = this.hashCode().toString()
+abstract class LifecycleLogFragment : Fragment() {
+    private val target = this.javaClass.simpleName
 
     override fun onAttach(context: Context) {
+        Timber.d("__ lifecycle: onAttach $target")
         super.onAttach(context)
-        Log.d(LOG_TAG, "onAttach")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Timber.d("__ lifecycle: onCreate $target")
         super.onCreate(savedInstanceState)
-        Log.d(LOG_TAG, "onCreate")
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d(LOG_TAG, "onCreateView")
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        Timber.d("__ lifecycle: onCreateView $target")
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Timber.d("__ lifecycle: onViewCreated $target")
         super.onViewCreated(view, savedInstanceState)
-        Log.d(LOG_TAG, "onViewCreated")
-
-        (view.findViewById(R.id.next_button) as Button).apply {
-            setOnClickListener {
-//                (requireActivity() as MainActivity).navigateTo(SecondFragment())
-            }
-        }
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
-        Log.d(LOG_TAG, "onViewStateRestored")
+        Timber.d("__ lifecycle: onViewStateRestored $target")
     }
 
     override fun onStart() {
+        Timber.d("__ lifecycle: onStart $target")
         super.onStart()
-        Log.d(LOG_TAG, "onStart")
     }
 
     override fun onResume() {
+        Timber.d("__ lifecycle: onResume $target")
         super.onResume()
-        Log.d(LOG_TAG, "onResume")
     }
 
     override fun onPause() {
+        Timber.d("__ lifecycle: onPause $target")
         super.onPause()
-        Log.d(LOG_TAG, "onPause")
     }
 
     override fun onStop() {
+        Timber.d("__ lifecycle: onStop $target")
         super.onStop()
-        Log.d(LOG_TAG, "onStop")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
+        Timber.d("__ lifecycle: onSaveInstanceState $target")
         super.onSaveInstanceState(outState)
-        Log.d(LOG_TAG, "onSaveInstanceState")
     }
 
     override fun onDestroy() {
+        Timber.d("__ lifecycle: onDestroy $target")
         super.onDestroy()
-        Log.d(LOG_TAG, "onDestroy")
     }
 
     override fun onDestroyView() {
+        Timber.d("__ lifecycle: onDestroyView $target")
         super.onDestroyView()
-        Log.d(LOG_TAG, "onDestroyView")
     }
 
     override fun onDetach() {
+        Timber.d("__ lifecycle: onDetach $target")
         super.onDetach()
-        Log.d(LOG_TAG, "onDetach")
     }
 }
